@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>
+        let and const in javascript
+    </title>
+</head>
+<body>
+    <h2>
+        javascript
+    </h2>
+    <script>
+        var a='One';
+        function test(){
+            var a='two';
+        }
+
+        {
+            let a='test';
+            console.log(a);
+        }
+        for(let i=0;i<5;i++){
+            console.log(i);
+        }
+
+        for(var y=0;y<5;y++){
+            console.log(y);
+        }
+        {
+            const a='test';
+            a='world';
+            console.log(a);
+        }
+    </script>
+</body>
+</html>

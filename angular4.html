@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+        <title>angular controller</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js">
+        </script>
+        <script>
+            function CostCtrl($scope)
+            {
+                $scope.Cost=1000.0;
+                $scope.AddTax=true;
+                function update(){
+                    $scope.tax=$scope.AddTax ? $scope.Cost *0.15 : 0.0;
+                    $scope.total=parseFloat($scope.Cost)+$scope.tax+parseFloat($scope.shipping.amount);
+
+                }
+                $scope.$watch('Cost',update);
+                $scope.$watch('AddTax',update);
+                $scope.$watch("shipping",update);
+                $scope.$watch('Cost+AddTax',update);        
+            
+
+            $scope.final_bill=0.0;
+            $scope.add=function(){
+                $scope.final_bill+=$scope.total;
+            }
+            $scope.shipping_options=[
+                {amount:10.0,name:"flat rate"},
+                {amount:20.0,name:"Express"},
+                {amount:30.0,name:"Super Express"}
+                
+            ];
+            $scope.shipping=$scope.shipping_options[0];
+        }
+            
+        </script>
+</head>
+<body >
+    <div ng-controller="CostCtrl">
+        <div>
+    <input type="checkbox" ng-model="AddTax">Add Tax
+    <input type="checkbox" ng-model="ShowTax">Show TAx<br>
+    </div>
+        Cost:<input type="text" ng-model="Cost" placeholder="enter the text"/>
+        <br>
+        shipping:<select ng-model="shipping" ng-options="s.name for s in shipping_options"></select>
+    <p>
+        This is the cost:{{Cost|currency}}.
+    </p>
+    <p>
+        This is the tax:{{tax|currency}}.
+    </p>
+    <p ng-show="ShowTax">
+        This is the total:{{total|currency}}.
+        <button ng-click="add()">Add</button>
+    </p>
+    <p ng-show="ShowTax">
+        This is the total running bill:{{final_bill|currency}}.
+
+    </p>
+
+</div>
+</body>
+</html>

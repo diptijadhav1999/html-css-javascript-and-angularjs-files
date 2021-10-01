@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Document</title>
+    <h2>Javascript function</h2>
+    <button type="button" onclick="message('hello')">Click</button>
+
+</head>
+<body>
+    <script>
+        var b=0;
+        function message(a){
+            var b=0;
+            b++;
+            var output=a+''+b;
+            document.querySelector('h2').innerHTML=output;
+            console.log(a);
+        }
+        function add(a,b){
+            console.log(a+b)
+        }
+        
+    </script>
+    
+</body>
+</html>

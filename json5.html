@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       <title>Document</title>
+</head>
+<body>
+    <div id="output1"></div>    
+    <div id="output2"></div>
+    <script>
+        var temp={
+            "firstname":"newadded",
+            "lastname":"chavan",
+            "age":45
+        }
+        console.log(temp);
+        var s=JSON.stringify(temp);
+        console.log(s);
+        //localStorage.setItem("ts",s);
+        var tempObj=localStorage.getItem("ts");
+        console.log(tempObj);
+
+        var obj2=JSON.parse(tempObj);
+        console.log(obj2);
+    </script>
+    
+</body>
+</html>

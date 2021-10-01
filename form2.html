@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/serverpage.php" method="get">
+        
+        <label for="username">UserName</label>
+        <input type="text" name="UserName" id="username" placeholder="your Name" required><br>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" placeholder="abc@gmail.com" required><br>
+        <label for="message">Message</label>
+        <textarea id ="message" name="message" id="message"required>Enter your text here</textarea><br>
+
+        <div>
+            <label for="password">PASSWORD:</label>
+            <input type="password" id="password" name="password"required>
+        </div>
+        <div>
+            What is your gender?<br>
+            Male:<input type="radio" name="gender" value="Male">
+            Female<input type="radio" name="gender" value="Female">
+            Other<input type="radio" name="gender" value="Other">
+
+        </div>
+        <div>
+            Do you agree or not?<br>
+            Yes<input type="checkbox" name="Ye" value="Yes">
+            No<input type="checkbox" name="Ye" value="No">
+        </div>
+        <label for="Subject" id="dropdown">SUBJECT</label>
+        <select name="Subject" id="dropdown">
+            <option value="Support">Support</option>
+            <option value="It">IT</option>
+            <option value="MEch">Mech</option>
+        </select><br>
+        <button type="submit">Send Message</button>
+
+    </form>
+</body>
+</html>

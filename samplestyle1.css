@@ -1,0 +1,34 @@
+h1{
+    color:blue;
+}
+p{
+    background-color:white;
+}
+.orange{
+    color: orange;
+}
+#first{
+    color:orchid;
+    font-size:1em;
+}
+
+body{
+    background-color: aqua;
+}
+
+section{
+    background-color:white ;
+}
+footer{
+    background-color: grey;
+}
+li{
+    list-style: none;
+    display: inline-block;
+    background-color: red;
+    color: white;
+}
+div{
+    width:50%;
+    background-color: green;
+}

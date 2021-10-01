@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>My item</li>
+        <li>Another Item</li>
+        <li>Wow Coll</li>
+    </ul>
+    <script>
+        var elelist=document.querySelectorAll('li');
+        for(var x=0;x<elelist.length;x++){
+            console.log(elelist[x]);
+            elelist[x].addEventListener('mouseover',function(){
+                this.classList.add('red');
+            });
+
+            elelist[x].addEventListener('mouseout',function(){
+                this.classList.remove('red');
+            })
+        }
+    </script>
+
+    </body>
+    </html>

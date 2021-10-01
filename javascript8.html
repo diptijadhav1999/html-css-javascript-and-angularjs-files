@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>
+        loops in javascript
+    </title>
+</head>
+<body>
+    <h2>
+        javascript
+    </h2>
+    <script>
+        var myStr="Hello    World One Two Three World World";
+        console.log(myStr);
+        console.log(myStr.length);
+        console.log(myStr.indexOf('World'));
+        console.log(myStr.lastIndexOf('World'));
+        var s=myStr.indexOf('World',25);
+        console.log(s);
+        console.log(myStr.search('World'));
+
+        function check(val){
+            var checkVal=myStr.indexOf(val);
+            if(checkVal<0){
+                message("not match");
+
+            }
+            else{
+                message("matched "+ checkVal);
+            }
+        }
+
+        function message(mes){
+            document.querySelector('h2').innerHTML=mes;
+        }
+
+    </script>  
+</body>
+</html>

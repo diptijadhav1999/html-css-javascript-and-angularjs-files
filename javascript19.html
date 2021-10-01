@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Document</title>
+    <style>
+        .red{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>My item</li>
+        <li>Another Item</li>
+        <li>Wow Coll</li>
+    </ul>
+    <input type="text" name="newItem">
+    <div id="clicker">Click me</div>
+    <script>
+        var inputselect=document.querySelector('input[name="newItem"]');
+        inputselect.addEventListener('keypress',function(event){
+            console.log(event.keyCode);
+        })
+
+        var mainlist=document.querySelector('ul');
+        var clicker=document.getElementById('clicker');
+        var allListItems=document.querySelectorAll('li');
+        for(var x=0;x<allListItems.length;x++){
+            allListItems[x].addEventListener('click',myList);
+        }
+
+        function myList(){
+            console.log('click');
+            this.classList.add('red');
+            console.log(this.tester);
+        }
+
+        clicker.addEventListener('click',function(){
+            console.log("hello");
+
+            var li=document.createElement('li');
+            li.addEventListener('click',myList);
+            li.tester="Hello World";
+            var textValue='test'+(allListItems.length+1);
+            var tempNode=document.createTextNode(textValue);
+            li.appendChild(tempNode);
+            mainlist.appendChild(li);
+
+        })
+
+    </script>
+    </body>
+    </html>

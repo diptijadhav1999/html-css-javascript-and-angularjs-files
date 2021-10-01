@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>fetch in json</title>
+</head>
+<body>
+    <div id="output"></div>
+    <script>
+        const output=document.getElementById("output");
+        const url="https://randomuser.me/api/";///wants to catch the error then make changes in url
+        fetch(url).then(function(response){
+            return response.json()
+        }).then(function(data){
+            data.results.forEach(function(person){
+                console.log(person.name.first);
+                console.log(person.picture.thumbnail);
+                output.innerHTML+=person.name.first+" "+person.name.last;
+                output.innerHTML+="<img src='"+person.picture.thumbnail+"'><br>";
+            })
+            console.log(data);      
+            
+            
+        }).catch(error=>{
+            console.log(error);
+
+        })
+
+    
+    </script>
+    
+</body>
+</html>

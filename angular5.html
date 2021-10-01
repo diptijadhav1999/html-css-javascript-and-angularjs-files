@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+        <title>angular </title>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js">
+        </script>
+        <script>
+            function contact($scope){
+                $scope.People=[
+                    {name:"jan",phone:[1234,67866]},
+                    {name:"july",phone:[4565]},
+                    {name:"aug",phone:[12098]}
+                ];
+            }
+        </script>
+</head>
+<body ng-controller="contact">
+    <div ng-repeat="person in People">
+    {{person.name}}
+    (
+        <span ng-repeat="phone in person.phone">
+            <span ng-show="$index>0">,</span>
+            {{phone}}
+        </span>
+    )
+    </div>
+
+</body>
+</html>

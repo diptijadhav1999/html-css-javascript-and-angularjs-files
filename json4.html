@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>more items</title>
+</head>
+<body>
+    <div id="output1"></div>
+    <div id="output2"></div>
+    <script>
+
+        var output1=document.getElementById("output1");
+        var output2=document.getElementById("output2");
+        var Obj={
+            "people":[
+                {
+                    "firstname":"dipti",
+                    "lastname":"jadhav",
+                    "age":23
+                },
+                {
+                    "firstname":"tejas",
+                    "lastname":"pawar",
+                    "age":23
+                },
+                {
+                    "firstname":"diptej",
+                    "lastname":"pawar2",
+                    "age":2
+                }
+            ],
+            "places":[
+                {
+                    "location":"mumbai",
+                    "flat":1
+                },
+                {
+                    "location":"pune",
+                    "flat":2
+
+                },{
+                    "location":"chennai",
+                    "flat":3
+
+                }
+            ]
+        }
+        console.log(Obj);
+        for(var x=0;x<Obj.people.length;x++)
+        {
+            var person=Obj.people[x];
+            console.log(person);
+            output1.innerHTML+=person.firstname+" "+person.lastname+ "<br>";
+
+        }
+        
+        for(var x=0;x<Obj.places.length;x++)
+        {
+            var person=Obj.places[x];
+            console.log(person);
+            output1.innerHTML+=person.location+" "+person.flat+ "<br>";
+
+        }
+        var temp={
+            "firstname":"newadded",
+            "lastname":"chavan",
+            "age":45
+        }
+        Obj.people.push(temp);
+        
+    </script>    
+</body>
+</html>

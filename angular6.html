@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+        <title>angular </title>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js">
+        </script>
+        <script>
+            function contact($scope){
+                $scope.People=[
+                    {name:"jan",phone:[1234,67866]},
+                    {name:"july",phone:[4565]},
+                    {name:"aug",phone:[12098]}
+                ];
+                $scope.add =function(){
+                $scope.People.push(
+                    {name:"mary",phone:[56897]}
+                );
+            }
+            }
+            function personCtrl($scope){
+                $scope.show=function(){
+                $scope.person.show_phones="true";
+            }
+            $scope.hide=function(){
+                $scope.person.show_phones="false";
+            }
+            
+        }
+        </script>
+</head>
+<button ng-click="add()">Add</button>
+<body ng-controller="contact">
+    <div ng-repeat="person in People" ng-controller="personCtrl">
+    {{person.name}}
+    (
+        <a href="#" ng-click="show()" ng-hide="person.show_phones">show</a>
+        <a href="#" ng-click="hide()" ng-show="person.show_phones">Hide</a>
+    )
+        <div style="margin-left:50px"; ng-show="person.show_phones">
+    <div ng-repeat="phone in person.phone">
+            
+    {{phone}}
+    </div>
+        </div>
+
+
+    </div>
+
+</body>
+</html>
